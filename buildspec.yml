@@ -1,3 +1,4 @@
+version: 0.2
 phase:
   pre_build:
     commands:
@@ -5,4 +6,5 @@ phase:
   
   build:
     commands:
-      - echo "This is build"
+      - "echo Copying repo content to s3 bucket"
+      - aws s3 sync . s3://$SOURCE_BUCKET_NAME --exclude buildspec.yaml --exclude .git/ --exclude .gitignore
