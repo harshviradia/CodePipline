@@ -7,4 +7,4 @@ phase:
   build:
     commands:
       - "echo Copying repo content to s3 bucket"
-      - aws s3 sync . s3://$SOURCE_BUCKET_NAME --exclude buildspec.yaml --exclude .git/ --exclude .gitignore
+      - aws s3 sync . s3://hbukbuild --exclude buildspec.yaml --exclude .git/ --exclude .gitignore
